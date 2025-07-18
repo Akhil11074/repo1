@@ -1,0 +1,41 @@
+<%@page import="com.Db.DBConnect"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index Page</title>
+<%@ include file="all_component/allcss.jsp" %>
+<style type="text/css">
+	.back-img {
+	background:url("img/copypen2.jpg") no-repeat center center fixed; 
+	width: 100%;
+	height:80vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+	<%@ include file="all_component/navbar.jsp" %>
+	<%@page import="java.sql.Connection" %>
+	<%@page import="com.Db.DBConnect" %>
+	<%
+	    Connection conn = DBConnect.getConn();
+	    
+	    System.out.println(conn);
+	   
+	%>
+	
+	<div class="container-fluid back-img">
+		<div class="text-center">
+			<h1 class="text-warning">E Notes- Save Your Notes</h1>
+			<a class="btn bg-dark text-light my-2 my-sm-0 mr-3" href="login.jsp" type="submit">LOGIN</a>
+	      	<a class="btn bg-dark text-light my-2 my-sm-0" href="register.jsp" type="submit">REGISTER</a>
+      	</div>
+	</div>
+	
+	<%@ include file="all_component/footer.jsp" %>
+</body>
+</html>

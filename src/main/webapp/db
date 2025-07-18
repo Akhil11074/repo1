@@ -1,0 +1,22 @@
+CREATE TABLE user (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) not null,
+    email VARCHAR(100) not null,
+    password VARCHAR(100) not null
+);
+
+
+
+
+
+
+CREATE TABLE post (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content VARCHAR(1000) NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    uid INT NOT NULL,
+    FOREIGN KEY (uid) REFERENCES user(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
